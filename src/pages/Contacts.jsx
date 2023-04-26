@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
 import { Item, DeleteContact } from "./Contacts.styled";
-import { fetchContacts, deleteContact } from "../../redux/operations";
+import { fetchContacts, deleteContact } from "../redux/operations";
 
 export const Contacts = () => { 
     const filter = useSelector(state => state.contacts.filter)

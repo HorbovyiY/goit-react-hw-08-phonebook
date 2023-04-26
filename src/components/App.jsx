@@ -1,5 +1,5 @@
 import { Form } from "./Form/Form";
-import { Contacts } from "./Contacts/Contacts";
+import { Contacts } from "../pages/Contacts";
 import { Filter } from "./Filter/Filter";
 import { Title } from "./App.styled";
 
