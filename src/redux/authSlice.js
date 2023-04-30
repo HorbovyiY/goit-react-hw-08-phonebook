@@ -11,7 +11,8 @@ export const authSlice = createSlice({
             email: null,
         },
         token: null,
-        isLoggedIn: false
+        isLoggedIn: false,
+        isRefreshing: false
     },
     extraReducers: {
         [registerUser.fulfilled](state, action) {
@@ -30,9 +31,16 @@ export const authSlice = createSlice({
             state.token = null;
             state.isLoggedIn = false;
         },
+        [refreshUser.pending](state) {
+            state.isRefreshing = true;
+        },
         [refreshUser.fulfilled](state, action) {
             state.user = {...action.payload};
             state.isLoggedIn = true;
+            state.isRefreshing = false;
+        },
+        [refreshUser.rejected](state) {
+            state.isRefreshing = false;
         },
     }
 })
