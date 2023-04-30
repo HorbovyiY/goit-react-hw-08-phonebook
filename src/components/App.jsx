@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { refreshUser } from "redux/operations";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
+import { Container } from "./App.styled";
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ export const App = () => {
   },[dispatch])
 
   return (
-  !isRefreshing &&(<div>
+  !isRefreshing &&(<Container>
     <Routes>
       <Route path="/" element={ <Layout/>}>
         <Route
@@ -41,7 +42,7 @@ export const App = () => {
         />
       </Route>
       </Routes>
-    </div>)
+    </Container>)
     
   );
 };

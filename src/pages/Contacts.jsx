@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import Button from '@mui/material/Button';
 
-import { Item, DeleteContact, Title } from "./Contacts.styled";
+import { Item,  Title } from "./Contacts.styled";
 import { fetchContacts, deleteContact } from "../redux/operations";
 import { Form } from "components/Form/Form";
 import { Filter } from "components/Filter/Filter";
@@ -32,13 +33,13 @@ export const Contacts = () => {
                     ({ id, name, number }) =>
                         <Item key={id}>
                             {name}: {number}
-                            <DeleteContact type="button" onClick={()=>{dispatch(deleteContact(id))}}>Delete</DeleteContact>
+                            <Button type="button" variant="outlined" color="error" onClick={()=>{dispatch(deleteContact(id))}}>Delete</Button>
                         </Item>
                 ):
                 contacts.map(({ id, name, number }) => 
                     <Item key={id}>
                         {name}: {number}
-                        <DeleteContact type="button" onClick={()=>{dispatch(deleteContact(id))}}>Delete</DeleteContact>
+                        <Button variant="outlined" color="error" type="button" onClick={()=>{dispatch(deleteContact(id))}}>Delete</Button>
                     </Item>
                 )
             }

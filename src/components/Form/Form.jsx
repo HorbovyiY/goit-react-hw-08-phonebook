@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
-import { ContactsForm, Name, AddContact } from "./Form.styled";
+import { ContactsForm, Name } from "./Form.styled";
 import { addContact } from "redux/operations";
 
 export const Form = () => { 
@@ -46,7 +48,7 @@ export const Form = () => {
             <ContactsForm onSubmit={onSubmit}>
                 <label>
                     <Name>Name</Name>
-                    <input
+                    <TextField
                         type="text"
                         name="name"
                         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -58,7 +60,7 @@ export const Form = () => {
                 </label>
                 <label>
                     <Name>Number</Name>
-                    <input
+                    <TextField
                         type="tel"
                         name="number"
                         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -68,6 +70,6 @@ export const Form = () => {
                         required
                     />
                 </label>
-                <AddContact type="submit">Add contact</AddContact>
+                <Button variant="outlined" color="success" type="submit">Add contact</Button>
             </ContactsForm>)
 }

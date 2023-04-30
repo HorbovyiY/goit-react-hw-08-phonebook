@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
 import { registerUser } from "redux/operations";
 
 export const Register = () => { 
@@ -45,7 +48,7 @@ export const Register = () => {
             <form onSubmit={onSubmit}>
                 <label>
                     <p>Name</p>
-                    <input
+                    <TextField
                         type="text"
                         name="name"
                         value={name}
@@ -55,7 +58,7 @@ export const Register = () => {
                 </label>
                 <label>
                     <p>Email</p>
-                    <input
+                    <TextField
                         type="email"
                         name="email"
                         value={email}
@@ -65,7 +68,7 @@ export const Register = () => {
                 </label>
                 <label>
                     <p>Password</p>
-                    <input
+                    <TextField
                         type="password"
                         name="password"
                         value={password}
@@ -73,7 +76,7 @@ export const Register = () => {
                         required
                     />
                 </label>
-                <button type="submit">Add contact</button>
+                <Button variant="contained" type="submit">Add contact</Button>
             </form>
         </>
     )

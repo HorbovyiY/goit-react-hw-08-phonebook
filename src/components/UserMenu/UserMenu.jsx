@@ -1,3 +1,5 @@
+import Button from '@mui/material/Button';
+
 import { useDispatch, useSelector } from "react-redux"
 import { logoutUser } from "redux/operations";
 
@@ -8,7 +10,7 @@ const UserMenu = () => {
     return (
         <>
             <p>{ email }</p>
-            <button type="button" onClick={()=>dispatch(logoutUser())}>Logout</button>
+            <Button type="button" variant="outlined" color="secondary" onClick={()=>dispatch(logoutUser())}>Logout</Button>
         </>        
     )
 }
