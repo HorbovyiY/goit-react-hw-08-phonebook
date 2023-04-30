@@ -29,8 +29,6 @@ export const Register = () => {
             password: e.currentTarget.elements.password.value
         }
 
-        console.log({name, email, password})
-
         dispatch(registerUser(newContact));
         
         resetForm();
@@ -50,8 +48,6 @@ export const Register = () => {
                     <input
                         type="text"
                         name="name"
-                        // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                        // title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                         value={name}
                         onChange={handleInputChange}
                         required
@@ -62,8 +58,6 @@ export const Register = () => {
                     <input
                         type="email"
                         name="email"
-                        // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-                        // title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                         value={email}
                         onChange={handleInputChange}
                         required
@@ -74,8 +68,6 @@ export const Register = () => {
                     <input
                         type="password"
                         name="password"
-                        // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-                        // title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                         value={password}
                         onChange={handleInputChange}
                         required

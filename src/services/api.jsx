@@ -17,3 +17,7 @@ export const delContacts = (id) => {
 export const userSignUp = (credentials) => { 
     return axios.post(`/users/signup`, credentials)
 }
+
+export const userLogin = (credentials) => { 
+    return axios.post(`/users/login`, credentials)
+}
