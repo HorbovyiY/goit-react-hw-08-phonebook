@@ -32,6 +32,7 @@ export const deleteContact  = createAsyncThunk("contacts/deleteContact", async (
 export const registerUser = createAsyncThunk("auth/register", async (credentials) => {
     try {
         const response = await API.userSignUp(credentials);
+        API.token.set(response.data.token);
         return response.data;
     } catch (error) {
         // return thunkAPI.rejectWithValue(error.message);
@@ -40,8 +41,18 @@ export const registerUser = createAsyncThunk("auth/register", async (credentials
 
 export const loginUser = createAsyncThunk("auth/login", async (credentials) => {
     try {
-        const response = await API.userLogin(credentials);
+        const response = await API.userLogIn(credentials);
+        API.token.set(response.data.token);
         return response.data;
+    } catch (error) {
+        // return thunkAPI.rejectWithValue(error.message);
+    }
+});
+
+export const logoutUser = createAsyncThunk("auth/logout", async () => {
+    try {
+        await API.userLogOut();
+        API.token.unset();
     } catch (error) {
         // return thunkAPI.rejectWithValue(error.message);
     }
