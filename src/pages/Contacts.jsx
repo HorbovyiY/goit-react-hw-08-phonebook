@@ -1,8 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
-import { Item, DeleteContact } from "./Contacts.styled";
+import { Item, DeleteContact, Title } from "./Contacts.styled";
 import { fetchContacts, deleteContact } from "../redux/operations";
+import { Form } from "components/Form/Form";
+import { Filter } from "components/Filter/Filter";
 
 export const Contacts = () => { 
     const filter = useSelector(state => state.contacts.filter)
@@ -17,6 +19,10 @@ export const Contacts = () => {
 
     return (
         <ul>
+            <Title>Phonebook</Title>  
+            <Form/>
+            <Title>Contacts</Title>
+            <Filter/>
             {isLoading && <p>Loading contacts...</p>}
             {(error) ? (<p>{error}</p>):
             (filter) ?

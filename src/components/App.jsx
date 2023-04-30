@@ -1,7 +1,8 @@
-import { Form } from "./Form/Form";
 import { Contacts } from "../pages/Contacts";
-import { Filter } from "./Filter/Filter";
-import { Title } from "./App.styled";
+import { Login } from "../pages/Login";
+import { Register } from "../pages/Register";
+import { Route, Routes } from "react-router-dom";
+import Navigation from "./Navigation/Navigation";
 
 export const App = () => {
 return(
@@ -14,13 +15,15 @@ return(
         fontSize: 40,
         color: '#010101'
       }}
-    >
-      <Title>Phonebook</Title>  
-        <Form/>
-
-      <Title>Contacts</Title>
-        <Filter/>
-        <Contacts/>
+  >
+    
+    <Routes>
+      <Route path="/" element={ <Navigation/>}>
+        <Route index path="/" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/contacts" element={<Contacts />} />
+      </Route>
+      </Routes>
     </div>
   );
 };

@@ -25,7 +25,7 @@ export const Form = () => {
 
         const newContact = {
             name: e.currentTarget.elements.name.value,
-            phone: e.currentTarget.elements.number.value
+            number: e.currentTarget.elements.number.value
         }
 
         const isNameInContacts = contacts.filter(item => item.name === e.currentTarget.elements.name.value).length;

@@ -28,3 +28,13 @@ export const deleteContact  = createAsyncThunk("contacts/deleteContact", async (
         return thunkAPI.rejectWithValue(error.message);
     }
 });
+
+export const registerUser  = createAsyncThunk("auth/register", async (credentials) => {
+    try {
+        const response = await API.userSignUp(credentials);
+        console.log(response.data)
+        return response.data;
+    } catch (error){ 
+        // return thunkAPI.rejectWithValue(error.message);
+    }
+})
