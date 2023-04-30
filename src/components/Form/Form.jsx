@@ -48,7 +48,7 @@ export const Form = () => {
             <ContactsForm onSubmit={onSubmit}>
                 <label>
                     <Name>Name</Name>
-                    <TextField
+                    <TextField sx={{marginBottom: '10px'}}
                         type="text"
                         name="name"
                         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -60,7 +60,7 @@ export const Form = () => {
                 </label>
                 <label>
                     <Name>Number</Name>
-                    <TextField
+                    <TextField sx={{marginBottom: '10px'}}
                         type="tel"
                         name="number"
                         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -70,6 +70,6 @@ export const Form = () => {
                         required
                     />
                 </label>
-                <Button variant="outlined" color="success" type="submit">Add contact</Button>
+                <Button sx={{marginLeft: '20px'}} variant="outlined" color="success" type="submit">Add contact</Button>
             </ContactsForm>)
 }

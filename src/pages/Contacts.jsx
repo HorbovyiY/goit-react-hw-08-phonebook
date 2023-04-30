@@ -33,13 +33,13 @@ export const Contacts = () => {
                     ({ id, name, number }) =>
                         <Item key={id}>
                             {name}: {number}
-                            <Button type="button" variant="outlined" color="error" onClick={()=>{dispatch(deleteContact(id))}}>Delete</Button>
+                            <Button sx={{marginLeft: '20px'}} type="button" variant="outlined" color="error" onClick={()=>{dispatch(deleteContact(id))}}>Delete</Button>
                         </Item>
                 ):
                 contacts.map(({ id, name, number }) => 
                     <Item key={id}>
                         {name}: {number}
-                        <Button variant="outlined" color="error" type="button" onClick={()=>{dispatch(deleteContact(id))}}>Delete</Button>
+                        <Button sx={{marginLeft: '20px'}} variant="outlined" color="error" type="button" onClick={()=>{dispatch(deleteContact(id))}}>Delete</Button>
                     </Item>
                 )
             }

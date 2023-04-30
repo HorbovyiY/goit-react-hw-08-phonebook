@@ -48,7 +48,7 @@ export const Register = () => {
             <form onSubmit={onSubmit}>
                 <label>
                     <p>Name</p>
-                    <TextField
+                    <TextField sx={{marginBottom: '10px'}}
                         type="text"
                         name="name"
                         value={name}
@@ -58,7 +58,7 @@ export const Register = () => {
                 </label>
                 <label>
                     <p>Email</p>
-                    <TextField
+                    <TextField sx={{marginBottom: '10px'}}
                         type="email"
                         name="email"
                         value={email}
@@ -68,7 +68,7 @@ export const Register = () => {
                 </label>
                 <label>
                     <p>Password</p>
-                    <TextField
+                    <TextField sx={{marginBottom: '10px'}}
                         type="password"
                         name="password"
                         value={password}
@@ -76,7 +76,7 @@ export const Register = () => {
                         required
                     />
                 </label>
-                <Button variant="contained" type="submit">Add contact</Button>
+                <Button sx={{marginLeft: '20px'}} variant="contained" type="submit">Add contact</Button>
             </form>
         </>
     )

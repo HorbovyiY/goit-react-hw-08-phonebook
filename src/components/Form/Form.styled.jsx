@@ -2,7 +2,6 @@ import styled from '@emotion/styled'
 
 export const ContactsForm = styled.form`
     padding: 10px;
-    border: 2px solid black;
 `
 
 export const Name = styled.span`

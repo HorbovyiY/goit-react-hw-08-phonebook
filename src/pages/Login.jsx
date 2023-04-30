@@ -42,7 +42,7 @@ export const Login = () => {
             <form onSubmit={onSubmit}>
                 <label>
                     <p>Email</p>
-                    <TextField
+                    <TextField sx={{marginBottom: '10px'}}
                         type="email"
                         name="email"
                         value={email}
@@ -52,7 +52,7 @@ export const Login = () => {
                 </label>
                 <label>
                     <p>Password</p>
-                    <TextField
+                    <TextField sx={{marginBottom: '10px'}}
                         type="password"
                         name="password"
                         value={password}
@@ -60,7 +60,7 @@ export const Login = () => {
                         required
                     />
                 </label>
-                <Button variant="contained" type="submit">Login</Button>
+                <Button sx={{marginLeft: '20px'}} variant="contained" type="submit">Login</Button>
             </form>
         </>
     )

@@ -11,7 +11,7 @@ export const Filter = () => {
     return (
         <FilterWrapper>
             <Title>Find contacts by name</Title>
-            <TextField
+            <TextField sx={{marginBottom: '10px'}}
                 type="text"
                 value={filter}
                 onChange={(e) => {dispatch(changeFilter(e.currentTarget.value))}}
