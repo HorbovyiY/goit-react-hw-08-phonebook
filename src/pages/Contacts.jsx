@@ -29,15 +29,15 @@ export const Contacts = () => {
                 contacts.filter(
                     ({ name }) => name.toLowerCase().includes(filter.toLowerCase())
                 ).map(
-                    ({ id, name, phone }) =>
+                    ({ id, name, number }) =>
                         <Item key={id}>
-                            {name}: {phone}
+                            {name}: {number}
                             <DeleteContact type="button" onClick={()=>{dispatch(deleteContact(id))}}>Delete</DeleteContact>
                         </Item>
                 ):
-                contacts.map(({ id, name, phone }) => 
+                contacts.map(({ id, name, number }) => 
                     <Item key={id}>
-                        {name}: {phone}
+                        {name}: {number}
                         <DeleteContact type="button" onClick={()=>{dispatch(deleteContact(id))}}>Delete</DeleteContact>
                     </Item>
                 )

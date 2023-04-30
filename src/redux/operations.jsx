@@ -65,7 +65,6 @@ export const refreshUser = createAsyncThunk("auth/refresh", async (_, thunkAPI) 
         
     try {
         const response = await API.userCurrent();
-        console.log(response)
         return response.data;
     } catch (error) {
         // return thunkAPI.rejectWithValue(error.message);
